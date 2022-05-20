@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+<body>
+
+<h1 style="color: red">Thông số ngày ... </h1>
+
+<div class="mt-4">
+    <div class="row">
+
+        <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">STT</th>
+      <th scope="col">Nhiệt độ (°C)</th>
+      <th scope="col">Độ ẩm (%)</th>
+      <th scope="col">Ghi chú</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        {{#each sensors }}
+      <th scope="row">1</th>
+      <td>{{this.temperature}}</td>
+      <td>{{this.humidity}}</td>
+      <td>{{this.createdAt}}</td>
+    </tr>
+        {{/each}}
+
+    </tr>
+  </tbody>
+</table>
+   
+   <nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item">
+      <a class="page-link" href="#" tabindex="-1">Ngày hôm trước</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">Ngày hôm sau</a>
+    </li>
+  </ul>
+</nav>     
+
+    </div>
+</div>
+</body>
+</html>
