@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 async function connect() {
     try {
-        await mongoose.connect('mongodb://localhost:27017/smart_home_data', {
+        await mongoose.connect('mongodb+srv://cluster0.bksgg.mongodb.net/sensors', {
             useNewUrlParser: true,
             useUnifiedTopology: true
         });
