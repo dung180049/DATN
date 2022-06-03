@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const timeSave = new Date()
 
 const Sensor = new Schema({
+    Month: { type: Number, require: true, default: timeSave.getMonth() + 1 },
+    Date: { type: Number, require: true, default: timeSave.getDate() },
+    Hour: { type: Number, require: true, default: timeSave.getHours() },
     temperature: { type: Number, require: true },
     humidity: { type: Number, require: true },
-    createdAt: { type: Date, require: true, default: Date.now }
-}, {
-    // timestamps: true,
-});
+}, );
 
 module.exports = mongoose.model('Sensor', Sensor);
