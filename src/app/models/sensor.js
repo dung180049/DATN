@@ -10,8 +10,8 @@ const Sensor = new Schema({
     Month: { type: Number, require: true, default: timeSaveInUTC7.getMonth() + 1 },
     Date: { type: Number, require: true, default: timeSaveInUTC7.getDate() },
     Hour: { type: Number, require: true, default: timeSaveInUTC7.getHours() },
-    temperature: { type: Number, require: true },
-    humidity: { type: Number, require: true },
+    temperature: { type: Float32Array, require: true },
+    humidity: { type: Float32Array, require: true },
 }, );
 
 module.exports = mongoose.model('Sensor', Sensor);
