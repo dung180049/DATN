@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+<body>
+
+<div class="mt-4">
+    <div class="row">
+
+        <h1 id = "date" style="color: red">Kết quả tìm kiếm </h1>
+    
+      <table class="table table-bordered">
+  <thead>
+    <tr>
+      
+     <th scope="col">STT</th>
+      <th scope="col">Nhiệt độ (độ C)</th>
+      <th scope="col">Độ ẩm (%)</th>
+      <th scope="col">Thời điểm</th>
+     
+       
+    </tr>
+  </thead>
+  <tbody>
+
+  {{#each sensors}}
+    <tr>
+       <th scope="row">{{sum @index 1}}</th>
+      <td>{{this.temperature}}</td>
+      <td>{{this.humidity}}</td>
+      <td>{{this.Hour}}h ngày {{this.Date}}-{{this.Month}}</td>
+      
+    </tr>
+   
+    {{/each}}
+     
+    
+     
+    
+  </tbody>
+</table>
+    
+    </div>
+    <div class="mt-4"></div>
+</div>
+</body>
+</html>

@@ -4,9 +4,11 @@ const predictRouter = require('./predict')
 const homeRouter = require('./home')
 const storeRouter = require('./store')
 const updateRouter = require('./update')
+const showRouter = require('./show')
 
 function route(app) {
     app.use('/update', updateRouter)
+    app.use('/show', showRouter)
     app.use('/control', controlRouter)
     app.use('/sensor-parameters', paramRouter)
     app.use('/predict', predictRouter)

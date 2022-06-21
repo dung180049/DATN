@@ -1,10 +1,49 @@
-<div class="mt-4">
-  <figure class="figure">
-    <img src="forecast/param.png" class="figure-img img-fluid rounded" alt="Biểu đồ kết quả dự đoán nhiệt độ độ ẩm">
-    <figcaption class="figure-caption">Caption</figcaption>
-  </figure>
-</div>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+<body>
 
 <div class="mt-4">
-  <a class="btn btn-primary" href="#" role="button">So sánh với số liệu thực tế</a>
+    <div class="row">
+
+        <h1 id = "date" style="color: red">Dự báo nhiệt độ ngày mai </h1>
+    
+      <table class="table table-bordered">
+  <thead>
+    <tr>
+      
+     <th scope="col">STT</th>
+      <th scope="col">Nhiệt độ (độ C)</th>
+      <th scope="col">Độ ẩm (%)</th>
+      <th scope="col">Thời điểm</th>
+     
+       
+    </tr>
+  </thead>
+  <tbody>
+
+  {{#each prediction}}
+    <tr>
+       <th scope="row">{{sum @index 1}}</th>
+      <td>{{this.temperature}}</td>
+      <td>{{this.humidity}}</td>
+      <td>{{this.Hour}}h ngày {{this.Date}}-{{this.Month}}</td>
+      
+    </tr>
+   
+    {{/each}}
+     
+    
+     
+    
+  </tbody>
+</table>
+    
+    </div>
+    <div class="mt-4"></div>
 </div>
+</body>
+</html>
