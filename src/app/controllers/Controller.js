@@ -75,7 +75,7 @@ class Controller {
     store(req, res, next) {
         const sensor = new Sensor(req.query)
         sensor.save()
-        res.render('store')
+        res.render('control')
     }
 }
 
