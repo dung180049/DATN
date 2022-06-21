@@ -16,7 +16,9 @@ class Controller {
             .find({ Date: dateShow })
             .then(sensors => {
                 res.render('show', {
-                    sensors: multipleMongooseToObject(sensors)
+                    sensors: multipleMongooseToObject(sensors),
+                    dateShow,
+                    monthShow
                 })
             })
             .catch(next);
@@ -67,7 +69,6 @@ class Controller {
         const tomorrowData = csvReader.readFile('forecast/data.csv')
         const sheets = tomorrowData.SheetNames
         const prediction = csvReader.utils.sheet_to_json(tomorrowData.Sheets[sheets])
-        console.log(prediction)
         res.render('predict', { prediction })
     }
 
